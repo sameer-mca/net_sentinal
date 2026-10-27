@@ -1,0 +1,361 @@
+=== ppt/slides/slide1.xml ===
+FIRST REVIEW
+Network Traffic Analyzer and
+Intrusion Detection System
+A Web-Based Platform for Real-Time Network Monitoring and Threat Detection
+Sameer Sha
+Roll No: 45
+Reg. No: CHN25MCA-2045
+Guide: Smt. Beena K, Assistant Professor
+
+=== ppt/slides/slide2.xml ===
+Introduction
+Network devices continuously exchange data in the form of packets.
+A large amount of network traffic is difficult to monitor manually.
+Raw packet information can be complex to understand.
+Suspicious network activities may go unnoticed.
+Network traffic analysis helps understand how a network is being used.
+Intrusion detection helps identify potentially harmful activity.
+The proposed system combines both functions in a single web platform.
+From Raw Packets
+to Real Insight
+Monitoring + Detection,
+in one platform
+Network Traffic Analyzer and Intrusion Detection System
+2
+
+=== ppt/slides/slide3.xml ===
+Problem Statement
+To develop a web-based system that can monitor network traffic in real time, analyze packet information, and identify potentially suspicious activities such as port scanning, 
+DoS
+-like traffic, abnormal traffic patterns and the system should present the analyzed information through a simple dashboard with real-time alerts and historical data for easier network monitoring.
+Network Traffic Analyzer and Intrusion Detection System
+3
+
+=== ppt/slides/slide4.xml ===
+Literature Review
+Network Traffic Analyzer and Intrusion Detection System
+4
+
+=== ppt/slides/slide5.xml ===
+Literature Review
+Network Traffic Analyzer and Intrusion Detection System
+5
+
+=== ppt/slides/slide6.xml ===
+Gap Identified
+Network devices continuously exchange data in the form of packets.
+Heuristic-based systems can provide fast and understandable detection, but predefined rules may not identify new or sophisticated attacks.
+Machine-learning-based systems can detect abnormal traffic patterns, but they require datasets, model training and parameter tuning.
+Some anomaly-detection approaches can identify unusual traffic but may not clearly explain why the traffic was considered suspicious.
+There is a need for a lightweight, real-time and user-friendly monitoring system that combines traffic analysis, multiple detection rules, risk assessment and clear visualization.
+From Detection
+to Understanding
+Existing methods detect threats, but practical, explainable monitoring remains a challenge.
+Network Traffic Analyzer and Intrusion Detection System
+6
+
+=== ppt/slides/slide7.xml ===
+Proposed Solution
+Real-time Network Monitoring – Continuously monitor live network traffic.
+Packet Capture – Capture network packets using Python and 
+Scapy
+.
+Packet Analysis – Extract source/destination IP, ports, protocol, packet size and other relevant information.
+Traffic Classification – Identify protocols such as TCP, UDP, DNS and IP.
+Intrusion Detection – Detect suspicious activities using predefined detection rules.
+Attack Detection – Identify patterns such as SYN Flood, Port Scanning, Suspicious DNS Requests , Suspicious Payloads, Malformed Packets etc.
+Alert Generation – Generate alerts when suspicious behavior crosses defined thresholds.
+Real-time Dashboard – Display traffic statistics, detected threats, alerts and host activity.
+Data Logging – Store packet information and detected events for later analysis.
+From Raw Packets
+to Real Insight
+Monitoring + Detection,
+in one platform
+Network Traffic Analyzer and Intrusion Detection System
+7
+
+=== ppt/slides/slide8.xml ===
+System Architecture
+Network Traffic Analyzer and Intrusion Detection System
+8
+
+=== ppt/slides/slide9.xml ===
+Architecture Overview
+The system continuously captures network packets, extracts relevant information, analyzes the traffic using predefined detection rules, generates alerts for suspicious activities, and presents the results through a dashboard.
+Live Traffic → Packet Capture → Feature Extraction → Detection → Alerts → Visualization
+Network Traffic Analyzer and Intrusion Detection System
+9
+
+=== ppt/slides/slide10.xml ===
+Architecture Components
+Network Interface 
+Connects the system to the network.
+Receives network traffic from the selected interface.
+Acts as the entry point for packet monitoring.	
+Packet Capture
+Captures live network packets.
+Uses Python and 
+Scapy
+.
+Continuously monitors network traffic.
+Passes captured packets to the processing module.
+Packet Processing & Feature Extraction
+Identifies the packet protocol.
+Extracts Source IP , Destination IP, source and destination ports.
+Records timestamp and packet size.
+Prepares packet information for detection.         
+Packet Capture
+Uses Python + 
+Scapy
+Network Traffic Analyzer and Intrusion Detection System
+10
+
+=== ppt/slides/slide11.xml ===
+Network Traffic Analyzer and Intrusion Detection System
+11
+Detection Engine
+Analyzes the extracted packet information.
+Applies predefined detection rules.
+Detects SYN flood attacks, port scanning, suspicious DNS queries.
+Detects malformed packets.
+Alert & Logging
+Generates alerts when suspicious activity is detected.
+Records the type of detected attack.
+Records source and destination information.
+Records timestamp and risk level.
+Stores alert and packet-summary information for later analysis.
+Detection & Alert
+Detect + Alert,
+in real time
+
+=== ppt/slides/slide12.xml ===
+Dashboard / Visualization
+Provides a real-time view of network activity.
+Displays live traffic information, protocol statistics.
+Displays detected attacks and alerts.
+Shows host activity and risk information.
+Helps the user understand detected network threats.
+Storage
+Stores alert logs.
+Stores packet summaries
+.Stores captured raw packets (PCAP).
+Supports offline analysis and investigation.
+Dashboard & Storage
+Visualize + Store , 
+in one place
+Network Traffic Analyzer and Intrusion Detection System
+12
+
+=== ppt/slides/slide13.xml ===
+Module Description
+Frontend UI : Provides a simple and responsive interface for monitoring network activity, viewing alerts, and accessing system reports.
+Network Monitoring Module : Captures live network packets using Python and 
+Scapy
+ and continuously monitors network traffic.
+Packet Analysis & Intrusion Detection Module : Processes packets, extracts relevant features, and detects suspicious activities using predefined detection rules.
+Alert & Reporting Module : Generates security alerts, records detected incidents and risk levels, and provides historical reports.
+Dashboard / Visualization Module : Displays real-time network traffic, protocol statistics, detected attacks, alerts, and host risk information.
+Storage Module : Stores packet summaries, alert logs, and captured raw packets for later analysis and investigation.
+Network Traffic Analyzer and Intrusion Detection System
+13
+
+=== ppt/slides/slide14.xml ===
+DATA FLOW DIAGRAM
+Network Traffic Analyzer and Intrusion Detection System
+14
+
+=== ppt/slides/slide15.xml ===
+LEVEL 0
+Network Traffic Analyzer and Intrusion Detection System
+15
+
+=== ppt/slides/slide16.xml ===
+LEVEL 1
+Network Traffic Analyzer and Intrusion Detection System
+16
+
+=== ppt/slides/slide17.xml ===
+Software Requirement 
+Specifications
+USER INTERFACE
+The system provides a simple and responsive web-based interface.
+The frontend is developed using React.js.
+Displays real-time network traffic and protocol statistics.
+Shows detected attacks, security alerts and risk levels.
+Provides charts, tables and filtering options for traffic analysis.
+User Interface
+responsive web-based interface
+Network Traffic Analyzer and Intrusion Detection System
+17
+
+=== ppt/slides/slide18.xml ===
+Software Requirements
+Operating System: Windows / Linux
+Frontend: React.js, HTML, CSS, JavaScript
+Backend: Python
+Packet Capture: 
+Scapy
+API: Flask / 
+FastAPI
+Real-Time Communication: 
+WebSocket
+Data Processing: Pandas
+Data Storage: CSV / JSONL / PCAP
+Web Browser: Chrome / Edge / Firefox
+Development Tool: VS Code
+Software Requirement
+Frontend + Backend + Database
+Network Traffic Analyzer and Intrusion Detection System
+18
+
+=== ppt/slides/slide19.xml ===
+Hardware Requirements
+Computer/Laptop: Minimum 4 GB RAM and dual-core processor.
+Storage: At least 10 GB of free storage.
+Network Interface: Wi-Fi or Ethernet adapter for packet capture.
+Display: Monitor or laptop screen for viewing the React dashboard.
+Network: Local network connection for real-time traffic monitoring.
+Optional: Additional network device for generating and testing traffic.
+Hardware Requirement
+Laptop + Storage + 
+Wifi
+Network Traffic Analyzer and Intrusion Detection System
+19
+
+=== ppt/slides/slide20.xml ===
+Use Case Diagram
+Network Traffic Analyzer and Intrusion Detection System
+20
+
+=== ppt/slides/slide21.xml ===
+Database Requirements
+Database: 
+MongoDB
+Network Traffic: Stores packet and traffic details.
+Alerts: Stores detected attacks, severity and timestamps.
+Devices: Stores discovered device information.
+Users: Stores authentication and user details.
+Reports: Stores historical analysis and generated reports.
+Backup: Important packet captures can be retained as PCAP files rather than putting every raw packet directly into 
+MongoDB
+Database Requirement
+MongoDB
+Network Traffic Analyzer and Intrusion Detection System
+21
+
+=== ppt/slides/slide22.xml ===
+Relational Schema Diagram
+Network Traffic Analyzer and Intrusion Detection System
+22
+
+=== ppt/slides/slide23.xml ===
+Functional Requirements
+Functional Requirements
+User authentication
+Real-time packet capture
+Packet information analysis
+Protocol and bandwidth monitoring
+Device discovery
+Suspicious activity detection
+Security alert management
+Real-time dashboard
+Historical traffic analysis
+Packet filtering
+Report generation
+Network Traffic Analyzer and Intrusion Detection System
+23
+
+=== ppt/slides/slide24.xml ===
+Non-Functional Requirements
+Non-Functional
+ Requirements
+Simple and responsive interface
+Real-time performance
+Secure data handling
+Reliable packet processing
+Scalable architecture
+Efficient database storage
+Easy maintenance
+Support for future enhancements
+Network Traffic Analyzer and Intrusion Detection System
+24
+
+=== ppt/slides/slide25.xml ===
+RESULTS
+Network Traffic Analyzer and Intrusion Detection System
+25
+
+=== ppt/slides/slide26.xml ===
+1- Home Page
+Network Traffic Analyzer and Intrusion Detection System
+26
+
+=== ppt/slides/slide27.xml ===
+2 – Login Page
+Network Traffic Analyzer and Intrusion Detection System
+27
+
+=== ppt/slides/slide28.xml ===
+3 – Registration Page
+Network Traffic Analyzer and Intrusion Detection System
+28
+
+=== ppt/slides/slide29.xml ===
+4 - Dashboard
+Network Traffic Analyzer and Intrusion Detection System
+29
+
+=== ppt/slides/slide30.xml ===
+Gantt Chart
+Network Traffic Analyzer and Intrusion Detection System
+30
+
+=== ppt/slides/slide31.xml ===
+Conclusion
+The proposed system aims to make network monitoring and basic security analysis easier through a single web-based platform.
+Real-time network monitoring
+Packet and protocol analysis
+Traffic visualization
+Suspicious activity detection
+Real-time security alerts
+Historical traffic analysis
+Device monitoring
+Report generation
+Built with Python and Scapy for packet analysis and the MERN Stack for the web application — a practical, user-friendly solution for network monitoring and cybersecurity learning.
+31
+
+=== ppt/slides/slide32.xml ===
+References
+Tamrakar
+, A., 
+Chaturvedi
+, J., 
+Poddar
+, M., & 
+Kumari
+, S. (2026). Network Traffic Analyzer: Real-Time Detection and Malicious Activity Identification. International Journal on Advanced Computer Theory and Engineering.
+Wawrowski
+, Ł., 
+Białas
+, A., 
+Kajzer
+, A., et al. (2023). Anomaly Detection Module for Network Traffic Monitoring in Public Institutions. Sensors, 23(6), 2974.
+Oroian
+, D., 
+Bolboaca
+, R., Roman, A.-S., & 
+Dobrota
+, V. (2024). Network Intrusion Detection System Using Anomaly Detection Techniques. IEEE 20th International Conference on Intelligent Computer Communication and Processing (ICCP), 93–100.
+Buzzio-García
+, J., et al. (2024). Exploring Traffic Patterns Through Network Programmability: Introducing 
+SDNFlow
+, a Comprehensive 
+OpenFlow
+-Based Statistics Dataset for Attack Detection. IEEE Access, 12, 42163–42180.
+32
+
+=== ppt/slides/slide33.xml ===
+Thank You!
+Questions & Discussion
+

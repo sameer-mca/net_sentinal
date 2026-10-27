@@ -1,0 +1,9 @@
+# NetSentinel .gitignore
+node_modules
+.env
+__pycache__
+venv
+*.pcap
+backend/reports/*.pdf
+backend/reports/*.csv
+dist
